@@ -28,7 +28,7 @@ public class PartidaService {
         selecao.setJogadoresDisponiveis(selecao.getJogadoresDisponiveis() - partida.getQuantidade());
 
         selecaoRepository.save(selecao);
-        partida.setSelecao();
+        partida.setSelecao(selecao);
         return partidaRepository.save(partida);
     }
 }

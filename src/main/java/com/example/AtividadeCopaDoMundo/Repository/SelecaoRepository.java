@@ -8,6 +8,10 @@ import java.util.List;
 
 public interface SelecaoRepository extends JpaRepository<Selecao, Long> {
 
-    @Query("SELECT s FROM Selecao s ORDER BY s.grup ASC, s.nome ASC")
-    List<Selecao> findAllAllOrderByGrupo();
+    @Query("SELECT s FROM Selecao s ORDER BY s.grupo ASC, s.nome ASC")
+    List<Selecao> findAllByOrderByGrupo();
+
+    List <Selecao> findByjogadoresDisponiveisLessThanEqualOrJogadoresDisponiveisGreaterThanEqual(Integer min , Integer max);
+
+
 }

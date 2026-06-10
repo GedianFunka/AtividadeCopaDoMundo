@@ -21,7 +21,7 @@ public class Partida {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    private LocalDate dataPartidade;
+    private LocalDate dataPartida;
 
     @Positive(message = "A Quantidade deve ser maior que 0")
     private Integer quantidade;

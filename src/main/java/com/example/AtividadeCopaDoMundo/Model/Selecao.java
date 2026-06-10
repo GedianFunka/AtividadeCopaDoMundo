@@ -40,8 +40,7 @@ public class Selecao {
     private Integer golsSofridos;
 
     @Positive(message = "O valor do pantel precisa ser maior que 0")
-    private double valorPantel;
+    private double valorPlantel;
 
-    private Integer JogadoresDisponiveis = 0;
-
+    private Integer jogadoresDisponiveis = 0;
 }

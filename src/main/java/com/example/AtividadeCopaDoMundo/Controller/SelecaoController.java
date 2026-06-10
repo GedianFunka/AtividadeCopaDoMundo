@@ -18,12 +18,25 @@ public class SelecaoController {
     private final SelecaoRepository selecaoRepository;
 
     @GetMapping
-    public List <Selecao> listar(){
+    public List<Selecao> listar() {
         return selecaoRepository.findAll();
     }
 
     @PostMapping
-    public ResponseEntity <Selecao> cadastrar(@Valid @RequestBody Selecao selecao){
-        return ResponseEntity.status(201).body(selecaoRepository.saveAll(selecao));
+    public ResponseEntity<Selecao> cadastrar(@Valid @RequestBody Selecao selecao) {
+        return ResponseEntity.status(201).body(selecaoRepository.save(selecao));
     }
+
+    @GetMapping("/grupo")
+    public List<Selecao> ListarPorGrupo(){
+        return selecaoRepository.findAllByOrderByGrupo();
+    }
+
+    @GetMapping("/limites")
+    public List <Selecao> listarNosLimites(){
+        return selecaoRepository.findByjogadoresDisponiveisLessThanEqualOrJogadoresDisponiveisGreaterThanEqual(0,100);
+    }
+
+
+
 }
